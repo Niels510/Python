@@ -125,11 +125,7 @@ else:
         # Solve the equation
         x = solve_linear_equation(t, N_døtre, N_sønner)
 
-        """ 
-        x = symbols('x')
-        Equation = Eq(t+N_døtre*x+N_sønner*2*x,1)
-        x = float(solve(Equation, x)[0])    
-        """
+
         for elem in D:
             if 'Søn' in elem:
                 D[elem]=2*x
