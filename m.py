@@ -1,5 +1,5 @@
 import streamlit as st
-from sympy import symbols, Eq, solve
+#from sympy import symbols, Eq, solve
 from fractions import Fraction
 from itertools import combinations, chain
 
