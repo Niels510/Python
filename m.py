@@ -5,16 +5,16 @@ from itertools import combinations, chain
 
 
 def solve_linear_equation(a, b, c):
-# Calculate the coefficient of x
-coefficient = b + 2 * c
+    # Calculate the coefficient of x
+    coefficient = b + 2 * c
 
-# Check if coefficient is zero to avoid division by zero
-if coefficient == 0:
-    raise ValueError("Coefficient is zero; equation has no unique solution.")
+    # Check if coefficient is zero to avoid division by zero
+    if coefficient == 0:
+        raise ValueError("Coefficient is zero; equation has no unique solution.")
 
-# Solve for x
-x = (1 - a) / coefficient
-return x
+    # Solve for x
+    x = (1 - a) / coefficient
+    return x
 
 
 st.title('Islamisk fordeling af arv')
