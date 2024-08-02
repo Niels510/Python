@@ -4,6 +4,19 @@ from fractions import Fraction
 from itertools import combinations, chain
 
 
+def solve_linear_equation(a, b, c):
+# Calculate the coefficient of x
+coefficient = b + 2 * c
+
+# Check if coefficient is zero to avoid division by zero
+if coefficient == 0:
+    raise ValueError("Coefficient is zero; equation has no unique solution.")
+
+# Solve for x
+x = (1 - a) / coefficient
+return x
+
+
 st.title('Islamisk fordeling af arv')
 
 # User input for gender
@@ -106,11 +119,17 @@ else:
 
     # Hvis der er sønner og evt. døtre, skal sønner hver have 2x mere end døtre:
     if N_sønner > 0:      
-        t = sum(D.values())    
+        t = sum(D.values())   
+        
+
+        # Solve the equation
+        x = solve_linear_equation(t, N_døtre, N_sønner)
+
+        """ 
         x = symbols('x')
         Equation = Eq(t+N_døtre*x+N_sønner*2*x,1)
         x = float(solve(Equation, x)[0])    
-        
+        """
         for elem in D:
             if 'Søn' in elem:
                 D[elem]=2*x
